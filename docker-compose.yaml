@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  # База данных для отдела
+  postgres_department_db:
+    image: postgres:13.3
+    environment:
+      POSTGRES_DB: "department"
+      POSTGRES_USER: "root"
+      POSTGRES_PASSWORD: "root"
+    ports:
+      - "5440:5432"
