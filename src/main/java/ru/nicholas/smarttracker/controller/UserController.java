@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 import ru.nicholas.smarttracker.exception.BadRequestException;
 import ru.nicholas.smarttracker.exception.NotFoundException;
 import ru.nicholas.smarttracker.model.dto.ErrorResponseDto;
-import ru.nicholas.smarttracker.model.dto.UpdateUserRequest;
 import ru.nicholas.smarttracker.model.dto.UserDto;
 import ru.nicholas.smarttracker.service.UserService;
 import ru.nicholas.smarttracker.util.Role;
@@ -57,7 +56,7 @@ public class UserController {
         return userService.getMyProfile();
     }
 
-    @SecurityRequirement(name = "Bearer Authentication")
+    /*@SecurityRequirement(name = "Bearer Authentication")
     @Operation(summary = "Обновление пользователя по id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Успешно обновлен пользователь по указанному id"),
@@ -70,7 +69,7 @@ public class UserController {
     @PreAuthorize("hasRole('ADMIN') or #id == principal.id")
     public UserDto updateUserById(@PathVariable Long id, @RequestBody UpdateUserRequest updateUserRequest) {
         return userService.updateUserById(id, updateUserRequest);
-    }
+    }*/
 
     @SecurityRequirement(name = "Bearer Authentication")
     @Operation(summary = "Обновление роли по id")
