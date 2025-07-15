@@ -24,7 +24,7 @@ app:
     username: admin
     password: admin123
     fullname: Администратов Михаил Иванович
-    email: admin2000@mail.com
+    email: admin@gmail.com
 
 server:
   port: 8080

@@ -3,10 +3,7 @@ package ru.nicholas.smarttracker.converter;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.springframework.data.domain.Page;
-import ru.nicholas.smarttracker.model.dto.DepartmentCreateRequest;
-import ru.nicholas.smarttracker.model.dto.DepartmentDto;
-import ru.nicholas.smarttracker.model.dto.SignUpRequest;
-import ru.nicholas.smarttracker.model.dto.UserDto;
+import ru.nicholas.smarttracker.model.dto.*;
 import ru.nicholas.smarttracker.model.enity.Department;
 import ru.nicholas.smarttracker.model.enity.User;
 import ru.nicholas.smarttracker.util.Role;
@@ -18,6 +15,10 @@ import java.util.stream.Collectors;
 public interface DepartmentConverter {
 
     Department toEntity(DepartmentCreateRequest departmentCreateRequest);
+
+    DepartmentShortDto toShortDto(Department department);
+
+    List<DepartmentShortDto> toShortDtoList(List<Department> departments);
 
     default DepartmentDto toDto(Department department) {
         if (department == null) {
